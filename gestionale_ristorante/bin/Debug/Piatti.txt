@@ -1,6 +1,8 @@
 1;ciao;pancetta;55;antipasto
-2;carbonara;uovo,pepe,sale;8;primo
+-2;carbonara;uovo,pepe,sale;8;primo
 3;helo;coca, pollo;1000;dolce
 5;pesto;pasta,pesto;12;primo
 6;bella;mortadella;78;antipasto
 9;caggiosa;acciughe,pane,fagioli;69;primo
+10;america;carne,pane,pomodoro;11;primo
+11;panda;olive,insalata;5;antipasto

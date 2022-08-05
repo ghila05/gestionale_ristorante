@@ -108,6 +108,14 @@ namespace gestionale_ristorante
             Ricompatta(filename);
         }
 
+        private void butn_rispistina_Click(object sender, EventArgs e)// RIPRISTINO DI UN PIATTO ELIMINATO 
+        {
+            int id = Convert.ToInt32(textBox_ID.Text);
+            id = id * -1;
+            Ripristina(id, filename);
+
+        }
+
 
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -334,6 +342,48 @@ namespace gestionale_ristorante
 
         }
 
+        public static void Ripristina(int id, string filename)
+        {
 
+            Piatto v;
+            StreamReader sr = new StreamReader(filename);
+            StreamWriter sw = new StreamWriter(@"./tmp.txt");
+            string line = "";
+            while (!sr.EndOfStream)
+            {
+                line = sr.ReadLine();
+                v = FromString(line);
+               
+                if (v.id == id)
+                {
+                    v.id = v.id * -1;
+                    sw.WriteLine(ToString(v));
+                }
+                else
+                {
+                    sw.WriteLine(ToString(v));
+                }
+
+
+
+            }
+            sw.Close();
+            sr.Close();
+
+            File.Delete(filename);
+            File.Move(@"./tmp.txt", filename);
+
+
+
+
+
+        }
+
+        
+
+        private void butn_aggiungi_grafica_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
