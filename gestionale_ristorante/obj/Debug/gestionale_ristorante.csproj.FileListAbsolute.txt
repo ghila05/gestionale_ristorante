@@ -1,0 +1,13 @@
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\bin\Debug\gestionale_ristorante.exe.config
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\bin\Debug\gestionale_ristorante.exe
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\bin\Debug\gestionale_ristorante.pdb
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\obj\Debug\gestionale_ristorante.csproj.AssemblyReference.cache
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\obj\Debug\gestionale_ristorante.Form1.resources
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\obj\Debug\gestionale_ristorante.Properties.Resources.resources
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\obj\Debug\gestionale_ristorante.csproj.GenerateResource.cache
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\obj\Debug\gestionale_ristorante.csproj.CoreCompileInputs.cache
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\obj\Debug\gestionale_ristorante.exe
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\obj\Debug\gestionale_ristorante.pdb
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\obj\Debug\gestionale_ristorante.Form2_Admin.resources
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\obj\Debug\gestionale_ristorante.Form3_User.resources
+C:\Users\nicol\source\repos\gestionale_ristorante\gestionale_ristorante\bin\Debug\FontAwesome.Sharp.dll
