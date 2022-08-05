@@ -45,6 +45,8 @@ namespace gestionale_ristorante
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_classificazione = new System.Windows.Forms.TextBox();
+            this.butn_ricompatta = new System.Windows.Forms.Button();
+            this.butn_rispistina = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // butn_aggiungi
@@ -102,10 +104,11 @@ namespace gestionale_ristorante
             // 
             this.butn_elimina.Location = new System.Drawing.Point(12, 627);
             this.butn_elimina.Name = "butn_elimina";
-            this.butn_elimina.Size = new System.Drawing.Size(100, 100);
+            this.butn_elimina.Size = new System.Drawing.Size(150, 129);
             this.butn_elimina.TabIndex = 5;
-            this.butn_elimina.Text = "Elimina Piatto";
+            this.butn_elimina.Text = "Elimina Piatto (logicamente)";
             this.butn_elimina.UseVisualStyleBackColor = true;
+            this.butn_elimina.Click += new System.EventHandler(this.butn_elimina_Click);
             // 
             // textBox_nome
             // 
@@ -195,12 +198,33 @@ namespace gestionale_ristorante
             this.textBox_classificazione.Size = new System.Drawing.Size(100, 22);
             this.textBox_classificazione.TabIndex = 15;
             // 
+            // butn_ricompatta
+            // 
+            this.butn_ricompatta.Location = new System.Drawing.Point(217, 627);
+            this.butn_ricompatta.Name = "butn_ricompatta";
+            this.butn_ricompatta.Size = new System.Drawing.Size(150, 129);
+            this.butn_ricompatta.TabIndex = 16;
+            this.butn_ricompatta.Text = "Ricompatta file piatti ";
+            this.butn_ricompatta.UseVisualStyleBackColor = true;
+            this.butn_ricompatta.Click += new System.EventHandler(this.butn_ricompatta_Click);
+            // 
+            // butn_rispistina
+            // 
+            this.butn_rispistina.Location = new System.Drawing.Point(373, 627);
+            this.butn_rispistina.Name = "butn_rispistina";
+            this.butn_rispistina.Size = new System.Drawing.Size(150, 129);
+            this.butn_rispistina.TabIndex = 17;
+            this.butn_rispistina.Text = "Ripristina piatto (tramite id)";
+            this.butn_rispistina.UseVisualStyleBackColor = true;
+            // 
             // Form2_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(892, 763);
+            this.Controls.Add(this.butn_rispistina);
+            this.Controls.Add(this.butn_ricompatta);
             this.Controls.Add(this.textBox_classificazione);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -244,5 +268,7 @@ namespace gestionale_ristorante
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_classificazione;
+        private System.Windows.Forms.Button butn_ricompatta;
+        private System.Windows.Forms.Button butn_rispistina;
     }
 }

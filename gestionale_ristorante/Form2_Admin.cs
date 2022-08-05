@@ -94,6 +94,21 @@ namespace gestionale_ristorante
             Modifica(id, filename, newline);
 
         }
+        private void butn_elimina_Click(object sender, EventArgs e) // ELIMINAZIONE LOGICA TRAMITE ID
+        {
+            int id = 0;
+            id = Convert.ToInt32(textBox_ID.Text);
+
+
+            EliminaLogica(id, filename);
+        }
+
+        private void butn_ricompatta_Click(object sender, EventArgs e) // RICOMPATTA FILE 
+        {
+            Ricompatta(filename);
+        }
+
+
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -178,6 +193,10 @@ namespace gestionale_ristorante
             {
                 line = sr.ReadLine();
                 v = FromString(line);
+                if (v.id < 0)
+                {
+                    return "piatto non trovato o inesistente";
+                }
                 if (v.nome == nome)
                 {
                     sr.Close();
@@ -213,6 +232,7 @@ namespace gestionale_ristorante
                 {
                     sw.WriteLine(line);
                 }
+               
 
             }
             sw.Close();
@@ -221,7 +241,8 @@ namespace gestionale_ristorante
             File.Delete(filename);
             File.Move(@"./tmp.txt", filename);
 
-
+           
+   
 
 
         }
@@ -248,5 +269,71 @@ namespace gestionale_ristorante
             r.Close();
             return id;
         }
+
+        public static void EliminaLogica(int id, string filename)
+        {
+            
+            Piatto v;
+            StreamReader sr = new StreamReader(filename);
+            StreamWriter sw = new StreamWriter(@"./tmp.txt");
+            string line = "";
+            while (!sr.EndOfStream)
+            {
+                line = sr.ReadLine();
+                v = FromString(line);
+                if (v.id == id)
+                {
+                    sw.WriteLine("-"+ line);
+                }
+                else
+                {
+                    sw.WriteLine(line);
+                }
+
+            }
+            sw.Close();
+            sr.Close();
+
+            File.Delete(filename);
+            File.Move(@"./tmp.txt", filename);
+
+
+
+
+        }
+
+
+        public static void Ricompatta(string filename)
+        {
+
+            Piatto v;
+            StreamReader sr = new StreamReader(filename);
+            StreamWriter sw = new StreamWriter(@"./tmp.txt");
+            string line = "";
+            while (!sr.EndOfStream)
+            {
+                line = sr.ReadLine();
+                v = FromString(line);
+                if (v.id > 0)
+                {
+                    sw.WriteLine(line);
+                }
+
+
+
+            }
+            sw.Close();
+            sr.Close();
+
+            File.Delete(filename);
+            File.Move(@"./tmp.txt", filename);
+
+
+
+
+
+        }
+
+
     }
 }
