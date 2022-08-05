@@ -72,7 +72,7 @@ namespace gestionale_ristorante
         private void butn_modifica_Click(object sender, EventArgs e)// MODIFICA 
         {
             Piatto p;
-            p.id = 0;
+            p.id = Convert.ToInt32(textBox_ID.Text); 
             p.nome = "";
             p.ingredienti = "";
             p.prezzo = 0;
@@ -201,14 +201,15 @@ namespace gestionale_ristorante
             {
                 line = sr.ReadLine();
                 v = FromString(line);
-                if (v.id < 0)
-                {
-                    return "piatto non trovato o inesistente";
-                }
+                
                 if (v.nome == nome)
                 {
+                    if (v.id < 0)
+                    {
+                        return "piatto non trovato o inesistente"; 
+                    }
                     sr.Close();
-                    return Convert.ToString("NOME: " + v.nome + " INGREDIENTI: " + v.ingredienti + " PREZZO: " + v.prezzo + "€" + " CLASSIFICAZIONE: "+ v.Classificazione);  // analizzo l'id di ogni riga e se trovo una corrispondenza ritorno il voto associato
+                    return Convert.ToString("NOME: " + v.nome + " INGREDIENTI: " + v.ingredienti + " PREZZO: " + v.prezzo + "€" + " CLASSIFICAZIONE: "+ v.Classificazione); 
                 }
 
             }
@@ -379,11 +380,120 @@ namespace gestionale_ristorante
 
         }
 
-        
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // INIZIO PARTE GRAFICA by Ghila
+
 
         private void butn_aggiungi_grafica_Click(object sender, EventArgs e)
         {
+            spegni();
+            label_nome.Visible = true;
+            textBox_nome.Visible = true;
+
+            label_ingredienti.Visible = true;
+            textBox_ingredienti.Visible = true;
+
+            label_prezzo.Visible = true;
+            textBox_prezzo.Visible = true;
+
+            label_classificazione.Visible = true;
+            textBox_classificazione.Visible = true;
+
+            butn_aggiungi.Visible = true;
+            
+        }
+
+        private void butn_visualizza_grafica_Click(object sender, EventArgs e)
+        {
+            spegni();
+            label_id.Visible = true;
+            textBox_ID.Visible = true;
+            
+            butn_visualizza.Visible = true;
+           
+        }      
+        
+        private void butn_ricerca_grafica_Click(object sender, EventArgs e)
+        {
+            spegni();
+            label_nome.Visible = true;
+            textBox_nome.Visible = true;
+            butn_ricerca.Visible = true;
 
         }
+        private void butn_modifica_grafica_Click(object sender, EventArgs e)
+        {
+            spegni();
+            label_nome.Visible = true;
+            textBox_nome.Visible = true;
+
+            label_ingredienti.Visible = true;
+            textBox_ingredienti.Visible = true;
+
+            label_prezzo.Visible = true;
+            textBox_prezzo.Visible = true;
+
+            label_classificazione.Visible = true;
+            textBox_classificazione.Visible = true;
+
+            label_id.Visible = true;
+            textBox_ID.Visible = true;
+
+            butn_modifica.Visible = true;
+
+        }
+        private void butn_elimina_grafica_Click(object sender, EventArgs e)
+        {
+            spegni();
+
+            label_id.Visible = true;
+            textBox_ID.Visible = true;
+            butn_elimina.Visible = true;
+
+        }      
+        
+        private void butn_ripristina_grafica_Click(object sender, EventArgs e)
+        {
+            spegni();
+            label_id.Visible = true;
+            textBox_ID.Visible = true;
+            butn_rispistina.Visible = true;
+        }
+
+        private void spegni()
+        {
+            label_nome.Visible = false;
+            textBox_nome.Visible = false;
+
+            label_ingredienti.Visible = false;
+            textBox_ingredienti.Visible = false;
+
+            label_prezzo.Visible = false;
+            textBox_prezzo.Visible = false;
+
+            label_classificazione.Visible = false;
+            textBox_classificazione.Visible = false;
+
+            butn_aggiungi.Visible = false;
+            butn_visualizza.Visible = false;
+            butn_ricerca.Visible = false;
+            butn_modifica.Visible = false;
+            butn_elimina.Visible = false;
+
+            butn_rispistina.Visible = false;
+
+            label_id.Visible = false;
+            textBox_ID.Visible = false;
+
+
+        }
+
+
     }
 }
