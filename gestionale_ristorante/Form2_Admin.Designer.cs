@@ -44,7 +44,6 @@ namespace gestionale_ristorante
             this.textBox_ID = new System.Windows.Forms.TextBox();
             this.label_id = new System.Windows.Forms.Label();
             this.label_classificazione = new System.Windows.Forms.Label();
-            this.textBox_classificazione = new System.Windows.Forms.TextBox();
             this.butn_ricompatta = new System.Windows.Forms.Button();
             this.butn_rispistina = new System.Windows.Forms.Button();
             this.butn_aggiungi_grafica = new System.Windows.Forms.Button();
@@ -53,6 +52,7 @@ namespace gestionale_ristorante
             this.butn_modifica_grafica = new System.Windows.Forms.Button();
             this.butn_elimina_grafica = new System.Windows.Forms.Button();
             this.butn_ripristina_grafica = new System.Windows.Forms.Button();
+            this.comboBox_classificazione = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // butn_aggiungi
@@ -231,15 +231,6 @@ namespace gestionale_ristorante
             this.label_classificazione.Text = "Classificazione:";
             this.label_classificazione.Visible = false;
             // 
-            // textBox_classificazione
-            // 
-            this.textBox_classificazione.Location = new System.Drawing.Point(706, 358);
-            this.textBox_classificazione.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_classificazione.Name = "textBox_classificazione";
-            this.textBox_classificazione.Size = new System.Drawing.Size(148, 30);
-            this.textBox_classificazione.TabIndex = 15;
-            this.textBox_classificazione.Visible = false;
-            // 
             // butn_ricompatta
             // 
             this.butn_ricompatta.Location = new System.Drawing.Point(982, 750);
@@ -258,7 +249,7 @@ namespace gestionale_ristorante
             this.butn_rispistina.Name = "butn_rispistina";
             this.butn_rispistina.Size = new System.Drawing.Size(185, 78);
             this.butn_rispistina.TabIndex = 17;
-            this.butn_rispistina.Text = "Ripristina piatto (tramite id)";
+            this.butn_rispistina.Text = "Ripristina piatto";
             this.butn_rispistina.UseVisualStyleBackColor = true;
             this.butn_rispistina.Visible = false;
             this.butn_rispistina.Click += new System.EventHandler(this.butn_rispistina_Click);
@@ -324,12 +315,28 @@ namespace gestionale_ristorante
             this.butn_ripristina_grafica.UseVisualStyleBackColor = true;
             this.butn_ripristina_grafica.Click += new System.EventHandler(this.butn_ripristina_grafica_Click);
             // 
+            // comboBox_classificazione
+            // 
+            this.comboBox_classificazione.FormattingEnabled = true;
+            this.comboBox_classificazione.Items.AddRange(new object[] {
+            "antipasto",
+            "primo",
+            "secondo",
+            "dolce",
+            "contorni"});
+            this.comboBox_classificazione.Location = new System.Drawing.Point(707, 358);
+            this.comboBox_classificazione.Name = "comboBox_classificazione";
+            this.comboBox_classificazione.Size = new System.Drawing.Size(148, 33);
+            this.comboBox_classificazione.TabIndex = 24;
+            this.comboBox_classificazione.Visible = false;
+            // 
             // Form2_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(1206, 815);
+            this.Controls.Add(this.comboBox_classificazione);
             this.Controls.Add(this.butn_ripristina_grafica);
             this.Controls.Add(this.butn_elimina_grafica);
             this.Controls.Add(this.butn_modifica_grafica);
@@ -338,7 +345,6 @@ namespace gestionale_ristorante
             this.Controls.Add(this.butn_aggiungi_grafica);
             this.Controls.Add(this.butn_rispistina);
             this.Controls.Add(this.butn_ricompatta);
-            this.Controls.Add(this.textBox_classificazione);
             this.Controls.Add(this.label_classificazione);
             this.Controls.Add(this.label_id);
             this.Controls.Add(this.textBox_ID);
@@ -381,7 +387,6 @@ namespace gestionale_ristorante
         private System.Windows.Forms.TextBox textBox_ID;
         private System.Windows.Forms.Label label_id;
         private System.Windows.Forms.Label label_classificazione;
-        private System.Windows.Forms.TextBox textBox_classificazione;
         private System.Windows.Forms.Button butn_ricompatta;
         private System.Windows.Forms.Button butn_rispistina;
         private System.Windows.Forms.Button butn_aggiungi_grafica;
@@ -390,5 +395,6 @@ namespace gestionale_ristorante
         private System.Windows.Forms.Button butn_modifica_grafica;
         private System.Windows.Forms.Button butn_elimina_grafica;
         private System.Windows.Forms.Button butn_ripristina_grafica;
+        private System.Windows.Forms.ComboBox comboBox_classificazione;
     }
 }

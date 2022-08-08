@@ -47,8 +47,10 @@ namespace gestionale_ristorante
 
             p.prezzo = Convert.ToDouble(textBox_prezzo.Text);
 
-            p.Classificazione = textBox_classificazione.Text;
+            p.Classificazione = comboBox_classificazione.Text;
 
+            Controlla();
+            
             AggiungiSuFile(p, filename);
 
         }
@@ -86,11 +88,11 @@ namespace gestionale_ristorante
 
             p.prezzo = Convert.ToDouble(textBox_prezzo.Text);
 
-            p.Classificazione = textBox_classificazione.Text;
+            p.Classificazione = comboBox_classificazione.Text;
 
             string newline = "";
             newline = ToString(p);
-
+            Controlla();
             Modifica(id, filename, newline);
 
         }
@@ -182,6 +184,7 @@ namespace gestionale_ristorante
 
 
             Piatto v;
+            
             v.id = Convert.ToInt32(ris[0]);
             v.nome = ris[1];
             v.ingredienti = ris[2];
@@ -276,7 +279,9 @@ namespace gestionale_ristorante
             }
             id++;
             r.Close();
+            
             return id;
+
         }
 
         public static void EliminaLogica(int id, string filename)
@@ -379,6 +384,28 @@ namespace gestionale_ristorante
 
 
         }
+        private void Controlla()
+        {
+            if (textBox_nome.Text == "")
+            {
+                throw new ArgumentException("campo vuoto");
+            }
+
+            if ( textBox_ingredienti.Text == "")
+            {
+                throw new ArgumentException("campo vuoto");
+            }
+
+            if (textBox_prezzo.Text == "")
+            {
+                throw new ArgumentException("campo vuoto");
+            }
+
+            if (comboBox_classificazione.Text == "")
+            {
+                throw new ArgumentException("campo vuoto");
+            }
+        }
 
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -403,9 +430,11 @@ namespace gestionale_ristorante
             textBox_prezzo.Visible = true;
 
             label_classificazione.Visible = true;
-            textBox_classificazione.Visible = true;
+            comboBox_classificazione.Visible = true;
 
             butn_aggiungi.Visible = true;
+
+            
             
         }
 
@@ -416,7 +445,8 @@ namespace gestionale_ristorante
             textBox_ID.Visible = true;
             
             butn_visualizza.Visible = true;
-           
+
+            Puliscitesto();
         }      
         
         private void butn_ricerca_grafica_Click(object sender, EventArgs e)
@@ -425,6 +455,8 @@ namespace gestionale_ristorante
             label_nome.Visible = true;
             textBox_nome.Visible = true;
             butn_ricerca.Visible = true;
+
+            Puliscitesto();
 
         }
         private void butn_modifica_grafica_Click(object sender, EventArgs e)
@@ -440,12 +472,14 @@ namespace gestionale_ristorante
             textBox_prezzo.Visible = true;
 
             label_classificazione.Visible = true;
-            textBox_classificazione.Visible = true;
+            comboBox_classificazione.Visible = true;
 
             label_id.Visible = true;
             textBox_ID.Visible = true;
 
             butn_modifica.Visible = true;
+
+            Puliscitesto();
 
         }
         private void butn_elimina_grafica_Click(object sender, EventArgs e)
@@ -456,6 +490,8 @@ namespace gestionale_ristorante
             textBox_ID.Visible = true;
             butn_elimina.Visible = true;
 
+            Puliscitesto();
+
         }      
         
         private void butn_ripristina_grafica_Click(object sender, EventArgs e)
@@ -464,6 +500,7 @@ namespace gestionale_ristorante
             label_id.Visible = true;
             textBox_ID.Visible = true;
             butn_rispistina.Visible = true;
+
         }
 
         private void spegni()
@@ -478,7 +515,7 @@ namespace gestionale_ristorante
             textBox_prezzo.Visible = false;
 
             label_classificazione.Visible = false;
-            textBox_classificazione.Visible = false;
+            comboBox_classificazione.Visible = false;
 
             butn_aggiungi.Visible = false;
             butn_visualizza.Visible = false;
@@ -492,6 +529,15 @@ namespace gestionale_ristorante
             textBox_ID.Visible = false;
 
 
+        }
+
+        private void Puliscitesto()
+        {
+            textBox_nome.Clear();
+            textBox_ID.Clear();
+            textBox_ingredienti.Clear();
+            textBox_prezzo.Clear();
+            
         }
 
 
