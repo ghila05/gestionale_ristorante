@@ -2,9 +2,9 @@
 3;helo;coca, pollo;1000;dolce
 5;pesto;pasta,pesto;12;primo
 7;modifica;modifica;3;dolce
-10;america;carne,pane,pomodoro;11;primo
 12;cracco;ciliegie,mandorle,rum;180;dolce
 13;ciao;helo;16;dolce
-14;aglioeolio;aglio,olio,pasta;12;primo
 15;bellaciao;pizza,;15;primo
 16;leprotta;leprotto,salsa;56;secondo
+17;margherita;pomodoro,mozzarella;7;primo
+18;frittozzo;patatine;2;contorni

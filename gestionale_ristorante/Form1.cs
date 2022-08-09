@@ -71,5 +71,10 @@ namespace gestionale_ristorante
             }
             return hash;
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
