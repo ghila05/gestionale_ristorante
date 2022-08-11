@@ -8,3 +8,5 @@
 16;leprotta;leprotto,salsa;56;secondo
 17;margherita;pomodoro,mozzarella;7;primo
 18;frittozzo;patatine;2;contorni
+19;cioccolatosa;cioccolato,farina,uova,lievito,sale;12,5;dolce
+20;fiori fritti;fiori di zucchina,pastella;5;contorni
