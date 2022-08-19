@@ -29,6 +29,7 @@ namespace gestionale_ristorante
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3_User));
             this.label1 = new System.Windows.Forms.Label();
             this.butn_antipasto = new System.Windows.Forms.Button();
             this.butn_primo = new System.Windows.Forms.Button();
@@ -40,6 +41,11 @@ namespace gestionale_ristorante
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBox_id_ordine = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button_aggiungi = new System.Windows.Forms.Button();
+            this.listBox_ordine = new System.Windows.Forms.ListBox();
+            this.textBox_prezzofin = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -158,12 +164,68 @@ namespace gestionale_ristorante
             this.columnHeader4.Text = "Prezzo";
             this.columnHeader4.Width = 108;
             // 
+            // textBox_id_ordine
+            // 
+            this.textBox_id_ordine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_id_ordine.Location = new System.Drawing.Point(1081, 107);
+            this.textBox_id_ordine.Multiline = true;
+            this.textBox_id_ordine.Name = "textBox_id_ordine";
+            this.textBox_id_ordine.Size = new System.Drawing.Size(50, 34);
+            this.textBox_id_ordine.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(1078, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Scrivi qui l\'id del tuo piatto";
+            // 
+            // button_aggiungi
+            // 
+            this.button_aggiungi.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button_aggiungi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_aggiungi.BackgroundImage")));
+            this.button_aggiungi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button_aggiungi.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_aggiungi.Location = new System.Drawing.Point(1135, 106);
+            this.button_aggiungi.Name = "button_aggiungi";
+            this.button_aggiungi.Size = new System.Drawing.Size(36, 34);
+            this.button_aggiungi.TabIndex = 9;
+            this.button_aggiungi.UseVisualStyleBackColor = false;
+            this.button_aggiungi.Click += new System.EventHandler(this.button_aggiungi_Click);
+            // 
+            // listBox_ordine
+            // 
+            this.listBox_ordine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_ordine.FormattingEnabled = true;
+            this.listBox_ordine.ItemHeight = 20;
+            this.listBox_ordine.Location = new System.Drawing.Point(1081, 158);
+            this.listBox_ordine.Name = "listBox_ordine";
+            this.listBox_ordine.Size = new System.Drawing.Size(137, 144);
+            this.listBox_ordine.TabIndex = 10;
+            // 
+            // textBox_prezzofin
+            // 
+            this.textBox_prezzofin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_prezzofin.Location = new System.Drawing.Point(1081, 280);
+            this.textBox_prezzofin.Multiline = true;
+            this.textBox_prezzofin.Name = "textBox_prezzofin";
+            this.textBox_prezzofin.Size = new System.Drawing.Size(137, 32);
+            this.textBox_prezzofin.TabIndex = 11;
+            // 
             // Form3_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1124, 647);
+            this.ClientSize = new System.Drawing.Size(1455, 647);
+            this.Controls.Add(this.textBox_prezzofin);
+            this.Controls.Add(this.listBox_ordine);
+            this.Controls.Add(this.button_aggiungi);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox_id_ordine);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.butn_contorni);
             this.Controls.Add(this.butn_dolci);
@@ -195,5 +257,10 @@ namespace gestionale_ristorante
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.TextBox textBox_id_ordine;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_aggiungi;
+        private System.Windows.Forms.ListBox listBox_ordine;
+        private System.Windows.Forms.TextBox textBox_prezzofin;
     }
 }

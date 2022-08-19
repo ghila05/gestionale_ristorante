@@ -29,7 +29,7 @@ namespace gestionale_ristorante
 
         public string filename = "Piatti.txt";//esplora soluzioni+tasto destro nome barra laterlare+openfolder+bin>debug>creafile
         public Piatto p;
-
+        public double prezzofin = 0;
         private void butn_antipasto_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
@@ -63,6 +63,34 @@ namespace gestionale_ristorante
             listView1.Items[listView1.Items.Count - 1].SubItems.Add(v.ingredienti);
             listView1.Items[listView1.Items.Count - 1].SubItems.Add(Convert.ToString(v.prezzo + " €"));
         }
+        private void button_aggiungi_Click(object sender, EventArgs e)
+        {
+            
+            Piatto v;
+            v = cercaSuFile(Convert.ToInt32(textBox_id_ordine.Text), filename);
+
+            if (v.nome == "")
+            {
+                throw new ArgumentException("piatto non trovato o inesistente");
+            }
+
+            listBox_ordine.Items.Add(v.nome);
+            prezzofin = prezzofin + v.prezzo;
+
+            textBox_id_ordine.Clear();
+            textBox_prezzofin.Clear();
+
+            textBox_prezzofin.Text=(Convert.ToString("totale    " + prezzofin + "€"));
+        }
+
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // INIZIO FUNZIONI by Ghila
 
         private void Menù(string filename, string classificazione)
         {
@@ -88,9 +116,40 @@ namespace gestionale_ristorante
 
 
         }
- 
-      
-      
+
+        public static Piatto cercaSuFile(int id, string filename, string sep = ";")
+        {
+         
+
+            StreamReader sr = new StreamReader(filename);
+            string line = "";
+            Piatto v;
+
+
+
+            while (!sr.EndOfStream)
+            {
+                line = sr.ReadLine();
+                v = FromString(line);
+                if (v.id == id)
+                {
+                    sr.Close();
+                    return v;
+                }
+
+            }
+
+            v.id = 0;
+            v.ingredienti = "";
+            v.nome = "";
+            v.prezzo = 0;
+            v.Classificazione = "";
+
+            return v;
+        }
+
+
+
 
         public static Piatto FromString(string votoStringa, string sep = ";")//funzione che da una stringa separa i campi e ritorna una struct associata a i campi di essa
         {
