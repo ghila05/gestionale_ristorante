@@ -1,5 +1,5 @@
 1;ciao;pancetta;55;antipasto
-3;helo;coca, pollo;1000;dolce
+3;helo;coca, pollo;8,5;secondo
 5;pesto;pasta,pesto;12;primo
 7;modifica;modifica;3;dolce
 12;cracco;ciliegie,mandorle,rum;180;dolce
@@ -10,3 +10,5 @@
 18;frittozzo;patatine;2;contorni
 19;cioccolatosa;cioccolato,farina,uova,lievito,sale;12,5;dolce
 20;fiori fritti;fiori di zucchina,pastella;5;contorni
+21;amatriciana;pasta,pecorino,peperoncino;15;primo
+22;focaccia;farina,acqua,olio,sale;6;antipasto

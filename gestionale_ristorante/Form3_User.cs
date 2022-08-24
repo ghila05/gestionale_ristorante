@@ -57,8 +57,8 @@ namespace gestionale_ristorante
             Menù(filename, "contorni");
         }
 
- 
-        
+
+
         private void button_aggiungi_Click(object sender, EventArgs e)
         {
             if (textBox_id_ordine.Text == "")
@@ -66,9 +66,69 @@ namespace gestionale_ristorante
                 throw new ArgumentException("compilare campo id");
             }
 
+            aggiungi();
+
+        }
+
+       
+        private void button_remove_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                listBox_ordine.Items[listBox_ordine.SelectedIndex].ToString();
+            }
+            catch
+            {
+                throw new ArgumentException("id non valido");
+            }
+
+            elimina();
+
+        }
+
+
+
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // INIZIO FUNZIONI by Ghila
+
+
+        private void elimina()
+        {
+            Piatto ordine;
+
+
+            string ultimordime = listBox_ordine.Items[listBox_ordine.SelectedIndex].ToString();
+
+
+            ordine = cercaSuFilenome(ultimordime, filename);
+
+            if (ordine.nome == "")
+            {
+                throw new ArgumentException("piatto non trovato o inesistente");
+            }
+
+            listBox_ordine.Items.RemoveAt(listBox_ordine.SelectedIndex);
+
+            prezzofin = prezzofin - ordine.prezzo; //dato che rimuovo l'ultima aggiuta la variabile p contiene ancora i campi 
+            if (prezzofin < 0)
+            {
+                prezzofin = 0;
+            }
+
+            textBox_prezzofin.Text = (Convert.ToString("totale:    " + prezzofin + "€"));
+        }
+        private void aggiungi()
+        {
             p = cercaSuFile(Convert.ToInt32(textBox_id_ordine.Text), filename);
 
-           
+
 
             if (p.nome == "")
             {
@@ -82,48 +142,10 @@ namespace gestionale_ristorante
             textBox_id_ordine.Clear();
             textBox_prezzofin.Clear();
 
-            textBox_prezzofin.Text=(Convert.ToString("totale:    " + prezzofin + "€"));
-        }
-        private void button_remove_Click(object sender, EventArgs e)
-        {
-            Piatto ordine;
-            try
-            {
-                listBox_ordine.Items[listBox_ordine.Items.Count - 1].ToString();
-            }
-            catch
-            {
-                throw new ArgumentException("ordine vuoto");
-            }
-            
-            string ultimordime = listBox_ordine.Items[listBox_ordine.Items.Count - 1].ToString();
-           
-
-            ordine = cercaSuFilenome(ultimordime, filename);
-
-            if (ordine.nome == "")
-            {
-                throw new ArgumentException("piatto non trovato o inesistente");
-            }
-
-            listBox_ordine.Items.RemoveAt(listBox_ordine.Items.Count - 1);
-
-            prezzofin = prezzofin - ordine.prezzo; //dato che rimuovo l'ultima aggiuta la variabile p contiene ancora i campi 
-
             textBox_prezzofin.Text = (Convert.ToString("totale:    " + prezzofin + "€"));
 
+
         }
-
-
-        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        // INIZIO FUNZIONI by Ghila
-
-
         private void Menù(string filename, string classificazione)
         {
             Piatto v;
@@ -244,7 +266,7 @@ namespace gestionale_ristorante
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void textBox_prezzofin_TextChanged(object sender, EventArgs e)
