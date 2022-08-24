@@ -41,6 +41,7 @@ namespace gestionale_ristorante
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.butn_switchUS = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -130,7 +131,7 @@ namespace gestionale_ristorante
             // pictureBox2
             // 
             this.pictureBox2.Image = global::gestionale_ristorante.Properties.Resources.user_removebg_previewblu;
-            this.pictureBox2.Location = new System.Drawing.Point(407, 59);
+            this.pictureBox2.Location = new System.Drawing.Point(404, 59);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(201, 181);
@@ -160,12 +161,25 @@ namespace gestionale_ristorante
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 39;
             this.iconPictureBox1.Location = new System.Drawing.Point(355, 294);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(43, 39);
             this.iconPictureBox1.TabIndex = 10;
             this.iconPictureBox1.TabStop = false;
             this.iconPictureBox1.Visible = false;
+            // 
+            // butn_switchUS
+            // 
+            this.butn_switchUS.Location = new System.Drawing.Point(12, 475);
+            this.butn_switchUS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.butn_switchUS.Name = "butn_switchUS";
+            this.butn_switchUS.Size = new System.Drawing.Size(180, 34);
+            this.butn_switchUS.TabIndex = 11;
+            this.butn_switchUS.Text = "switch to user";
+            this.butn_switchUS.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.butn_switchUS.UseVisualStyleBackColor = true;
+            this.butn_switchUS.Visible = false;
+            this.butn_switchUS.Click += new System.EventHandler(this.butn_switchUS_Click);
             // 
             // Form1
             // 
@@ -173,6 +187,7 @@ namespace gestionale_ristorante
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(988, 521);
+            this.Controls.Add(this.butn_switchUS);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox2);
@@ -207,6 +222,7 @@ namespace gestionale_ristorante
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Button butn_switchUS;
     }
 }
 
