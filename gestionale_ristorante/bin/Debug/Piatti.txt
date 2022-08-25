@@ -12,3 +12,4 @@
 20;fiori fritti;fiori di zucchina,pastella;5;contorni
 21;amatriciana;pasta,pecorino,peperoncino;15;primo
 22;focaccia;farina,acqua,olio,sale;6;antipasto
+23;girellepazze;melanzane,pasta,sale,ricotta;13;primo

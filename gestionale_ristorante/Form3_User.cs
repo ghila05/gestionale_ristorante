@@ -61,12 +61,7 @@ namespace gestionale_ristorante
 
         private void button_aggiungi_Click(object sender, EventArgs e)
         {
-            if (textBox_id_ordine.Text == "")
-            {
-                throw new ArgumentException("compilare campo id");
-            }
 
-            aggiungi();
 
         }
 
@@ -124,28 +119,7 @@ namespace gestionale_ristorante
 
             textBox_prezzofin.Text = (Convert.ToString("totale:    " + prezzofin + "€"));
         }
-        private void aggiungi()
-        {
-            p = cercaSuFile(Convert.ToInt32(textBox_id_ordine.Text), filename);
-
-
-
-            if (p.nome == "")
-            {
-                throw new ArgumentException("piatto non trovato o inesistente");
-            }
-
-
-            listBox_ordine.Items.Add(p.nome);
-            prezzofin = prezzofin + p.prezzo;
-
-            textBox_id_ordine.Clear();
-            textBox_prezzofin.Clear();
-
-            textBox_prezzofin.Text = (Convert.ToString("totale:    " + prezzofin + "€"));
-
-
-        }
+       
         private void Menù(string filename, string classificazione)
         {
             Piatto v;
@@ -289,7 +263,36 @@ namespace gestionale_ristorante
 
         }
 
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            string selected = listView1.SelectedItems[0].SubItems[1].Text;
 
+            aggiungi(selected);
+        }
+
+        private void aggiungi(string piatto)
+        {
+            Piatto selezionato;
+            selezionato = cercaSuFilenome(piatto,filename);
+
+            if (p.nome == "")
+            {
+                throw new ArgumentException("piatto non trovato o inesistente");
+            }
+
+
+            listBox_ordine.Items.Add(selezionato.nome);
+            prezzofin = prezzofin + selezionato.prezzo;
+
+        
+            textBox_prezzofin.Clear();
+
+            textBox_prezzofin.Text = (Convert.ToString("totale:    " + prezzofin + "€"));
+
+
+
+
+        }
     }
 
 }
