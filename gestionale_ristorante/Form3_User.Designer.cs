@@ -29,8 +29,8 @@ namespace gestionale_ristorante
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("");
             this.label1 = new System.Windows.Forms.Label();
             this.butn_antipasto = new System.Windows.Forms.Button();
             this.butn_primo = new System.Windows.Forms.Button();
@@ -141,8 +141,8 @@ namespace gestionale_ristorante
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem11,
-            listViewItem12});
+            listViewItem13,
+            listViewItem14});
             this.listView1.Location = new System.Drawing.Point(314, 78);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(810, 491);
@@ -174,12 +174,12 @@ namespace gestionale_ristorante
             // 
             // listBox_ordine
             // 
-            this.listBox_ordine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_ordine.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox_ordine.FormattingEnabled = true;
-            this.listBox_ordine.ItemHeight = 25;
+            this.listBox_ordine.ItemHeight = 29;
             this.listBox_ordine.Location = new System.Drawing.Point(1148, 78);
             this.listBox_ordine.Name = "listBox_ordine";
-            this.listBox_ordine.Size = new System.Drawing.Size(222, 479);
+            this.listBox_ordine.Size = new System.Drawing.Size(222, 468);
             this.listBox_ordine.TabIndex = 10;
             this.listBox_ordine.SelectedIndexChanged += new System.EventHandler(this.listBox_ordine_SelectedIndexChanged);
             // 
@@ -191,7 +191,7 @@ namespace gestionale_ristorante
             this.textBox_prezzofin.Name = "textBox_prezzofin";
             this.textBox_prezzofin.Size = new System.Drawing.Size(222, 32);
             this.textBox_prezzofin.TabIndex = 11;
-            this.textBox_prezzofin.TextChanged += new System.EventHandler(this.textBox_prezzofin_TextChanged);
+           
             // 
             // button_remove
             // 

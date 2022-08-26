@@ -98,6 +98,7 @@ namespace gestionale_ristorante
         }
         private void butn_elimina_Click(object sender, EventArgs e) // ELIMINAZIONE LOGICA TRAMITE ID
         {
+
             int id = 0;
             id = Convert.ToInt32(textBox_ID.Text);
 
@@ -127,6 +128,7 @@ namespace gestionale_ristorante
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // INIZIO FUNZIONI by Ghila
+
 
 
         public static void AggiungiSuFile(Piatto v, string filename)
@@ -167,7 +169,7 @@ namespace gestionale_ristorante
                 if (v.id == id)
                 {
                     sr.Close();
-                    return Convert.ToString("NOME: " +v.nome +" INGREDIENTI: " + v.ingredienti + " PREZZO: "+ v.prezzo + "€" + " CLASSIFICAZIONE: " + v.Classificazione);  // analizzo l'id di ogni riga e se trovo una corrispondenza ritorno il voto associato
+                    return Convert.ToString("ID: "+ v.id + " NOME: " +v.nome +" INGREDIENTI: " + v.ingredienti + " PREZZO: "+ v.prezzo + "€" + " CLASSIFICAZIONE: " + v.Classificazione);  // analizzo l'id di ogni riga e se trovo una corrispondenza ritorno il voto associato
                 }
 
             }
@@ -407,6 +409,34 @@ namespace gestionale_ristorante
             }
         }
 
+        private void riempiripristina()
+        {
+            listBox_ripristina.Items.Clear();
+            Piatto v;
+            StreamReader sr = new StreamReader(filename);
+           
+            string line = "";
+            while (!sr.EndOfStream)
+            {
+                line = sr.ReadLine();
+                v = FromString(line);
+                if (v.id < 0)
+                {
+
+                    listBox_ripristina.Items.Add("ID: " + v.id*-1 + " NOME: " + v.nome);
+                }
+
+
+
+            }
+          
+            sr.Close();
+
+
+
+
+        }
+
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -487,10 +517,11 @@ namespace gestionale_ristorante
             spegni();
 
             label_id.Visible = true;
-            textBox_ID.Visible = true;
+           
             butn_elimina.Visible = true;
-
+            textBox_ID.Visible = true;
             Puliscitesto();
+          
 
         }      
         
@@ -500,6 +531,8 @@ namespace gestionale_ristorante
             label_id.Visible = true;
             textBox_ID.Visible = true;
             butn_rispistina.Visible = true;
+            listBox_ripristina.Visible = true;
+            riempiripristina();
 
         }
 
@@ -527,7 +560,7 @@ namespace gestionale_ristorante
 
             label_id.Visible = false;
             textBox_ID.Visible = false;
-
+            listBox_ripristina.Visible = false;
 
         }
 

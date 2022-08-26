@@ -58,13 +58,6 @@ namespace gestionale_ristorante
         }
 
 
-
-        private void button_aggiungi_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
        
         private void button_remove_Click(object sender, EventArgs e)
         {
@@ -80,6 +73,12 @@ namespace gestionale_ristorante
 
             elimina();
 
+        }
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            string selected = listView1.SelectedItems[0].SubItems[1].Text;
+
+            aggiungi(selected);
         }
 
 
@@ -111,7 +110,7 @@ namespace gestionale_ristorante
 
             listBox_ordine.Items.RemoveAt(listBox_ordine.SelectedIndex);
 
-            prezzofin = prezzofin - ordine.prezzo; //dato che rimuovo l'ultima aggiuta la variabile p contiene ancora i campi 
+            prezzofin = prezzofin - ordine.prezzo; 
             if (prezzofin < 0)
             {
                 prezzofin = 0;
@@ -148,13 +147,16 @@ namespace gestionale_ristorante
         private void Riempi(Piatto v)
 
         {
+            
+            if(v.id > 0)
+            {
+                listView1.Items.Add(Convert.ToString(v.id));
+                listView1.Items[listView1.Items.Count - 1].SubItems.Add(v.nome);
+                listView1.Items[listView1.Items.Count - 1].SubItems.Add(v.ingredienti);
+                listView1.Items[listView1.Items.Count - 1].SubItems.Add(Convert.ToString(v.prezzo + " €"));
 
-
-            listView1.Items.Add(Convert.ToString(v.id));
-            listView1.Items[listView1.Items.Count - 1].SubItems.Add(v.nome);
-            listView1.Items[listView1.Items.Count - 1].SubItems.Add(v.ingredienti);
-            listView1.Items[listView1.Items.Count - 1].SubItems.Add(Convert.ToString(v.prezzo + " €"));
-
+            }
+ 
 
         }
 
@@ -238,15 +240,35 @@ namespace gestionale_ristorante
             return v;
         }
 
+        private void aggiungi(string piatto)
+        {
+            Piatto selezionato;
+            selezionato = cercaSuFilenome(piatto, filename);
+
+            if (p.nome == "")
+            {
+                throw new ArgumentException("piatto non trovato o inesistente");
+            }
+
+
+            listBox_ordine.Items.Add(selezionato.nome);
+            prezzofin = prezzofin + selezionato.prezzo;
+
+
+            textBox_prezzofin.Clear();
+
+            textBox_prezzofin.Text = (Convert.ToString("totale:    " + prezzofin + "€"));
+
+
+
+
+        }
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
            
         }
 
-        private void textBox_prezzofin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void listBox_ordine_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -258,41 +280,11 @@ namespace gestionale_ristorante
 
         }
 
-        private void textBox_id_ordine_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_MouseClick(object sender, MouseEventArgs e)
-        {
-            string selected = listView1.SelectedItems[0].SubItems[1].Text;
-
-            aggiungi(selected);
-        }
-
-        private void aggiungi(string piatto)
-        {
-            Piatto selezionato;
-            selezionato = cercaSuFilenome(piatto,filename);
-
-            if (p.nome == "")
-            {
-                throw new ArgumentException("piatto non trovato o inesistente");
-            }
-
-
-            listBox_ordine.Items.Add(selezionato.nome);
-            prezzofin = prezzofin + selezionato.prezzo;
-
-        
-            textBox_prezzofin.Clear();
-
-            textBox_prezzofin.Text = (Convert.ToString("totale:    " + prezzofin + "€"));
 
 
 
 
-        }
+
     }
 
 }
