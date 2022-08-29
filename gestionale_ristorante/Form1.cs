@@ -34,6 +34,7 @@ namespace gestionale_ristorante
             button3.Visible = true;
            
             textBox1.Visible = true;
+            textBox1.Clear();
             butn_switchUS.Visible = true;
         }
         private void butn_switchUS_Click(object sender, EventArgs e)

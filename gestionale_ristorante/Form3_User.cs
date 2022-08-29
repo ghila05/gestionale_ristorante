@@ -131,16 +131,13 @@ namespace gestionale_ristorante
                 v = FromString(line);
                 if (v.Classificazione == classificazione)
                 {
+                    
                     Riempi(v);
                 }
-                
 
-               
             }
 
-
-
-
+            sr.Close();
 
         }
 

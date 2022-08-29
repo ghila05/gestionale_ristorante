@@ -13,3 +13,5 @@
 21;amatriciana;pasta,pecorino,peperoncino;15;primo
 22;focaccia;farina,acqua,olio,sale;6;antipasto
 23;girellepazze;melanzane,pasta,sale,ricotta;13;primo
+24;carne ripiena;manzo,spezie;48;secondo
+25;torta di mele;impasto,mele,farina,zucchero;12,5;dolce
