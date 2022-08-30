@@ -76,9 +76,9 @@ namespace gestionale_ristorante
         }
         private void listView1_MouseClick(object sender, MouseEventArgs e)
         {
-            string selected = listView1.SelectedItems[0].SubItems[1].Text;
+            string selected = listView1.SelectedItems[0].SubItems[1].Text; //salva il nome del piatto nella stringa
 
-            aggiungi(selected);
+            aggiungi(selected); //ricerca tramite nome 
         }
 
 
@@ -141,7 +141,7 @@ namespace gestionale_ristorante
 
         }
 
-        private void Riempi(Piatto v)
+        private void Riempi(Piatto v) //riempie listview utente
 
         {
             

@@ -109,6 +109,7 @@ namespace gestionale_ristorante
         private void butn_ricompatta_Click(object sender, EventArgs e) // RICOMPATTA FILE 
         {
             Ricompatta(filename);
+            listBox_ripristina.Items.Clear();
         }
 
         private void butn_rispistina_Click(object sender, EventArgs e)// RIPRISTINO DI UN PIATTO ELIMINATO 
@@ -279,10 +280,35 @@ namespace gestionale_ristorante
                 }
 
             }
+
             id++;
             r.Close();
+
+            id = controllocontatore(id, filename);
+
             
             return id;
+
+        }
+        private static int controllocontatore(int id, string filename)//controlla se c'è una corrispondenza di id negli eliminati e in caso positivo aumenta di 1
+        {
+           
+            StreamReader c = new StreamReader(filename);
+            string line = "";
+            Piatto v;
+            while (!c.EndOfStream)
+            {
+                line = c.ReadLine();
+                v = FromString(line);
+               if (v.id == id * -1)
+                {
+                    id++;
+                }
+
+            }
+            c.Close();
+            return id;
+
 
         }
 
@@ -344,7 +370,7 @@ namespace gestionale_ristorante
             File.Delete(filename);
             File.Move(@"./tmp.txt", filename);
 
-
+            
 
 
 

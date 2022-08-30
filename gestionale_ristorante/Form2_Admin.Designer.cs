@@ -58,7 +58,7 @@ namespace gestionale_ristorante
             // 
             // butn_aggiungi
             // 
-            this.butn_aggiungi.Location = new System.Drawing.Point(18, 475);
+            this.butn_aggiungi.Location = new System.Drawing.Point(18, 494);
             this.butn_aggiungi.Margin = new System.Windows.Forms.Padding(4);
             this.butn_aggiungi.Name = "butn_aggiungi";
             this.butn_aggiungi.Size = new System.Drawing.Size(188, 78);
@@ -82,7 +82,7 @@ namespace gestionale_ristorante
             // 
             // butn_modifica
             // 
-            this.butn_modifica.Location = new System.Drawing.Point(614, 475);
+            this.butn_modifica.Location = new System.Drawing.Point(614, 494);
             this.butn_modifica.Margin = new System.Windows.Forms.Padding(4);
             this.butn_modifica.Name = "butn_modifica";
             this.butn_modifica.Size = new System.Drawing.Size(185, 78);
@@ -94,7 +94,7 @@ namespace gestionale_ristorante
             // 
             // butn_ricerca
             // 
-            this.butn_ricerca.Location = new System.Drawing.Point(420, 475);
+            this.butn_ricerca.Location = new System.Drawing.Point(420, 494);
             this.butn_ricerca.Margin = new System.Windows.Forms.Padding(4);
             this.butn_ricerca.Name = "butn_ricerca";
             this.butn_ricerca.Size = new System.Drawing.Size(186, 78);
@@ -106,7 +106,7 @@ namespace gestionale_ristorante
             // 
             // butn_visualizza
             // 
-            this.butn_visualizza.Location = new System.Drawing.Point(225, 475);
+            this.butn_visualizza.Location = new System.Drawing.Point(225, 494);
             this.butn_visualizza.Margin = new System.Windows.Forms.Padding(4);
             this.butn_visualizza.Name = "butn_visualizza";
             this.butn_visualizza.Size = new System.Drawing.Size(187, 78);
@@ -118,7 +118,7 @@ namespace gestionale_ristorante
             // 
             // butn_elimina
             // 
-            this.butn_elimina.Location = new System.Drawing.Point(807, 475);
+            this.butn_elimina.Location = new System.Drawing.Point(807, 494);
             this.butn_elimina.Margin = new System.Windows.Forms.Padding(4);
             this.butn_elimina.Name = "butn_elimina";
             this.butn_elimina.Size = new System.Drawing.Size(185, 78);
@@ -234,7 +234,7 @@ namespace gestionale_ristorante
             // 
             // butn_ricompatta
             // 
-            this.butn_ricompatta.Location = new System.Drawing.Point(976, 743);
+            this.butn_ricompatta.Location = new System.Drawing.Point(982, 743);
             this.butn_ricompatta.Margin = new System.Windows.Forms.Padding(4);
             this.butn_ricompatta.Name = "butn_ricompatta";
             this.butn_ricompatta.Size = new System.Drawing.Size(211, 52);
@@ -245,7 +245,7 @@ namespace gestionale_ristorante
             // 
             // butn_rispistina
             // 
-            this.butn_rispistina.Location = new System.Drawing.Point(1000, 475);
+            this.butn_rispistina.Location = new System.Drawing.Point(1000, 494);
             this.butn_rispistina.Margin = new System.Windows.Forms.Padding(4);
             this.butn_rispistina.Name = "butn_rispistina";
             this.butn_rispistina.Size = new System.Drawing.Size(185, 78);

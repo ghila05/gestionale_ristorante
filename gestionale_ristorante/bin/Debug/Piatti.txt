@@ -15,3 +15,7 @@
 23;girellepazze;melanzane,pasta,sale,ricotta;13;primo
 24;carne ripiena;manzo,spezie;48;secondo
 25;torta di mele;impasto,mele,farina,zucchero;12,5;dolce
+26;orecchiette;pasta,sugo,ricotta;16;secondo
+26;mozzarelline pazze;mozzarelle,sale,uova,pane;12,5;antipasto
+-27;piattoeliminato;ciao;5;antipasto
+28;parmigiana;pomodoro,melanzane,sale,mozzarella;15;antipasto
